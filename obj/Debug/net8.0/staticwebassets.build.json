@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "bVG13DPBkF4s/d5viUlKjEjhQNm9HiRfRcJbuGFweAs=",
+  "Source": "JsonNachaAchApi",
+  "BasePath": "_content/JsonNachaAchApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

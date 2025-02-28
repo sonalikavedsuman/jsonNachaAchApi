@@ -1,0 +1,6 @@
+@JsonNachaAchApi_HostAddress = http://localhost:5052
+
+GET {{JsonNachaAchApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

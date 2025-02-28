@@ -1,0 +1,867 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "JsonNachaAchApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/AchFile": {
+      "post": {
+        "tags": [
+          "AchFile"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AchFile"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AchFile"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AchFile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AchFile"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AchFile"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AchFile"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AchFile"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AchFile"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AchFile"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AchFile"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/AchFile/convert": {
+      "post": {
+        "tags": [
+          "AchFile"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AchFile": {
+        "type": "object",
+        "properties": {
+          "iatBatches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IATBatch"
+            },
+            "nullable": true
+          },
+          "notificationOfChange": {
+            "nullable": true
+          },
+          "returnEntries": {
+            "nullable": true
+          },
+          "batches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Batch"
+            },
+            "nullable": true
+          },
+          "fileADVControl": {
+            "$ref": "#/components/schemas/FileADVControl"
+          },
+          "fileControl": {
+            "$ref": "#/components/schemas/FileControl"
+          },
+          "fileHeader": {
+            "$ref": "#/components/schemas/FileHeader"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda10": {
+        "type": "object",
+        "properties": {
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foreignPaymentAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionTypeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda11": {
+        "type": "object",
+        "properties": {
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorStreetAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda12": {
+        "type": "object",
+        "properties": {
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorCityStateProvince": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorCountryPostalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda13": {
+        "type": "object",
+        "properties": {
+          "odfiBranchCountryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "odfiidNumberQualifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "odfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "odfiName": {
+            "type": "string",
+            "nullable": true
+          },
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda14": {
+        "type": "object",
+        "properties": {
+          "rdfiBranchCountryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "rdfiidNumberQualifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "rdfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "rdfiName": {
+            "type": "string",
+            "nullable": true
+          },
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda15": {
+        "type": "object",
+        "properties": {
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiverIDNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiverStreetAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Addenda16": {
+        "type": "object",
+        "properties": {
+          "entryDetailSequenceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiverCityStateProvince": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiverCountryPostalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "typeCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Batch": {
+        "type": "object",
+        "properties": {
+          "batchControl": {
+            "$ref": "#/components/schemas/BatchControl"
+          },
+          "batchHeader": {
+            "$ref": "#/components/schemas/BatchHeader"
+          },
+          "entryDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntryDetail"
+            },
+            "nullable": true
+          },
+          "offset": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BatchControl": {
+        "type": "object",
+        "properties": {
+          "odfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "entryAddendaCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryHash": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceClassCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCredit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalDebit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BatchHeader": {
+        "type": "object",
+        "properties": {
+          "odfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyDescriptiveDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyEntryDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "effectiveEntryDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorStatusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviceClassCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "settlementDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "standardEntryClassCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntryDetail": {
+        "type": "object",
+        "properties": {
+          "dfiAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "rdfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkDigit": {
+            "type": "string",
+            "nullable": true
+          },
+          "discretionaryData": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "individualName": {
+            "type": "string",
+            "nullable": true
+          },
+          "traceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileADVControl": {
+        "type": "object",
+        "properties": {
+          "batchCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryAddendaCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryHash": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCredit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalDebit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileControl": {
+        "type": "object",
+        "properties": {
+          "batchCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryAddendaCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryHash": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalCredit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalDebit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileHeader": {
+        "type": "object",
+        "properties": {
+          "fileCreationDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileCreationTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileIDModifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "immediateDestination": {
+            "type": "string",
+            "nullable": true
+          },
+          "immediateDestinationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "immediateOrigin": {
+            "type": "string",
+            "nullable": true
+          },
+          "immediateOriginName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IATBatch": {
+        "type": "object",
+        "properties": {
+          "iatBatchHeader": {
+            "$ref": "#/components/schemas/IATBatchHeader"
+          },
+          "iatEntryDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IATEntryDetail"
+            },
+            "nullable": true
+          },
+          "batchControl": {
+            "$ref": "#/components/schemas/BatchControl"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IATBatchHeader": {
+        "type": "object",
+        "properties": {
+          "iatIndicator": {
+            "type": "string",
+            "nullable": true
+          },
+          "isoDestinationCountryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "isoDestinationCurrencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "isoOriginatingCurrencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "odfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyEntryDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "effectiveEntryDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "foreignExchangeIndicator": {
+            "type": "string",
+            "nullable": true
+          },
+          "foreignExchangeReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "foreignExchangeReferenceIndicator": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "originatorStatusCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviceClassCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "settlementDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "standardEntryClassCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IATEntryDetail": {
+        "type": "object",
+        "properties": {
+          "dfiAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ofacScreeningIndicator": {
+            "type": "string",
+            "nullable": true
+          },
+          "rdfiIdentification": {
+            "type": "string",
+            "nullable": true
+          },
+          "addenda10": {
+            "$ref": "#/components/schemas/Addenda10"
+          },
+          "addenda11": {
+            "$ref": "#/components/schemas/Addenda11"
+          },
+          "addenda12": {
+            "$ref": "#/components/schemas/Addenda12"
+          },
+          "addenda13": {
+            "$ref": "#/components/schemas/Addenda13"
+          },
+          "addenda14": {
+            "$ref": "#/components/schemas/Addenda14"
+          },
+          "addenda15": {
+            "$ref": "#/components/schemas/Addenda15"
+          },
+          "addenda16": {
+            "$ref": "#/components/schemas/Addenda16"
+          },
+          "addendaRecordIndicator": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "addendaRecords": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkDigit": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryOFACScreeningIndicator": {
+            "type": "string",
+            "nullable": true
+          },
+          "traceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
